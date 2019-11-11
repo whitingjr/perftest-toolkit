@@ -1,0 +1,6 @@
+[hyperfoil_controller]
+injector-controller ansible_host=injector-controller ansible_hostname=injector-controller 
+
+[hyperfoil_agent]
+injector-agent-01 ansible_host=injector-agent-01 ansible_hostname=injector-agent-01
+#injector-agent-02 ansible_host=injector-agent-02 ansible_hostname=injector-agent-02
