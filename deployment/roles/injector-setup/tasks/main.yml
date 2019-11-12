@@ -11,3 +11,5 @@
     when: hfc_status.status == -1
     include_role:
       name: hyperfoil.hyperfoil_setup
+    vars:
+      hyperfoil_controller_args: -Dio.hyperfoil.deploy.timeout=30000

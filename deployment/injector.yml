@@ -3,7 +3,7 @@
     - hyperfoil_agent
   tasks:
   - include_role:
-    name: injector-configurator
+      name: injector-configurator
 - hosts: 
     - hyperfoil_controller
     - hyperfoil_agent
