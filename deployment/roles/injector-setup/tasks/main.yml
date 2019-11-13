@@ -12,4 +12,7 @@
     include_role:
       name: hyperfoil.hyperfoil_setup
     vars:
-      hyperfoil_controller_args: -Dio.hyperfoil.deploy.timeout=30000
+      hyperfoil_controller_args: "-Dio.hyperfoil.deploy.timeout=30000 -Dio.hyperfoil.controller.cluster.ip=192.168.42.45 -Dorg.jgroups=TRACE "
+      hyperfoil_distribution: "/home/vagrant/Hyperfoil/distribution/target/hyperfoil-0.5-SNAPSHOT.zip"
+      hyperfoil_log_config: /home/vagrant/log4j2-info.xml
+
