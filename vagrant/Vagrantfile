@@ -79,7 +79,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     inventory.vm.box_version = VM_BOX_VERSION
     inventory.vm.network :private_network, ip: "192.168.42.45"
     inventory.vm.provision "bootstrap", type: "shell" do |s|
-      s.inline = VM_AGENTS_SCRIPT + ";sudo su - vagrant --command=\"ssh-keygen -f ~/.ssh/id_rsa -N '';cp /vagrant/config /home/vagrant/.ssh/config;chmod 644 /home/vagrant/.ssh/config;chmod +x /vagrant/push-ssh-key.sh;/vagrant/push-ssh-key.sh vagrant@injector-agent-01;/vagrant/push-ssh-key.sh vagrant@injector-agent-02;/vagrant/push-ssh-key.sh vagrant@injector-controller;git clone https://github.com/3scale/perftest-toolkit.git --branch hyperfoil\;cd /home/vagrant;git clone https://github.com/Hyperfoil/Hyperfoil.git;cd Hyperfoil;sudo dnf install maven.noarch -y;mvn package -DskipTests " "
+      s.inline = VM_AGENTS_SCRIPT + ";sudo su - vagrant --command=\"ssh-keygen -f ~/.ssh/id_rsa -N '';cp /vagrant/config /home/vagrant/.ssh/config;chmod 644 /home/vagrant/.ssh/config;chmod +x /vagrant/push-ssh-key.sh;/vagrant/push-ssh-key.sh vagrant@injector-agent-01;/vagrant/push-ssh-key.sh vagrant@injector-agent-02;/vagrant/push-ssh-key.sh vagrant@injector-controller;git clone https://github.com/3scale/perftest-toolkit.git --branch hyperfoil;git clone https://github.com/whitingjr/Hyperfoil.git;cd Hyperfoil;sudo dnf install maven.noarch -y;mvn package -DskipTests \" "
       end
   end
 
